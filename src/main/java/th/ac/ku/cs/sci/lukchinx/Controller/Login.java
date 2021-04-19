@@ -17,6 +17,9 @@ import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.client.RestTemplate;
+import th.ac.ku.cs.sci.lukchinx.Model.Customer;
+import th.ac.ku.cs.sci.lukchinx.Service.CustomerService;
 
 import java.io.IOException;
 
@@ -24,6 +27,7 @@ import java.io.IOException;
 @Component
 @Controller
 public class Login {
+    private CustomerService customerService = new CustomerService(new RestTemplate());
     @FXML
     private Pane pane;
     @FXML
@@ -50,7 +54,12 @@ public class Login {
         loginBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
+                if(!usernameField.getText().isEmpty() && !passwordField.getText().isEmpty()){
+                    Customer customer = customerService.login(new Customer(usernameField.getText(),passwordField.getText()));
+                    if(customer != null) {
+                        System.out.println(1);
+                    }
+                }
             }
         });
         loginBtn.setOnMouseEntered(event -> loginBtn.setStyle("-fx-background-color: #FEA058"));

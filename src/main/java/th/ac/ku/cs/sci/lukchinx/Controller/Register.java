@@ -16,6 +16,7 @@ import th.ac.ku.cs.sci.lukchinx.Model.Customer;
 import th.ac.ku.cs.sci.lukchinx.Service.CustomerService;
 
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 public class Register {
     private CustomerService customer = new CustomerService(new RestTemplate());
@@ -41,8 +42,12 @@ public class Register {
             @Override
             public void handle(ActionEvent event) {
                 if(!firstField.getText().isEmpty() && !lastField.getText().isEmpty() && !emailField.getText().isEmpty() && !phoneField.getText().isEmpty() && !passwordField.getText().isEmpty() && !confirmField.getText().isEmpty()){
-                    customer.createCustomer(new Customer(firstField.getText()+lastField.getText(), emailField.getText(), phoneField.getText(), passwordField.getText()));
-
+                    if(!Pattern.matches("[a-zA-Z]", firstField.getText()) && !Pattern.matches("[a-zA-Z]", lastField.getText())
+                            && Pattern.matches("[0-9]", phoneField.getText()) && Pattern.matches("[a-zA-Z0-9]", passwordField.getText()) && Pattern.matches("[a-zA-Z0-9]", confirmField.getText())){
+                        System.out.println("invalid");
+                    }else {
+                        customer.createCustomer(new Customer(firstField.getText() + lastField.getText(), emailField.getText(), phoneField.getText(), passwordField.getText()));
+                    }
                     firstField.clear();
                     lastField.clear();
                     emailField.clear();

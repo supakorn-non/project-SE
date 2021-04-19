@@ -14,7 +14,7 @@
 
 <Pane fx:id="pane" prefHeight="750.0" prefWidth="550.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="th.ac.ku.cs.sci.lukchinx.Controller.Login">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb67e" height="205.0" layoutX="118.0" layoutY="424.0" stroke="#fbb777" strokeType="INSIDE" width="323.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb67e" height="205.0" layoutX="118.0" layoutY="424.0" stroke="#ffb67e" strokeType="INSIDE" width="323.0" />
         <Text fill="#f56736" layoutX="115.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shrimp Trading" textAlignment="CENTER" wrappingWidth="322.676513671875">
             <font>
                 <Font name="MV Boli" size="40.0" />
