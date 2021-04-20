@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -29,7 +30,7 @@ public class Payment {
     @FXML
     private Pane pane;
     @FXML
-    Text OrderText;
+    Text a, b;
     @FXML
     Text PriceText;
     @FXML
