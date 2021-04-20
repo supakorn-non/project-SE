@@ -38,7 +38,6 @@ public class StageListener implements ApplicationListener<StageReadyEvent> {
             stage.setScene(scene);
             stage.setTitle("Shrimp Trading Company");
             stage.show();
-            stage.setResizable(false);
         } catch (IOException e) {
             e.printStackTrace();
         }

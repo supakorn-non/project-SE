@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="550.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="th.ac.ku.cs.sci.lukchinx.Controller.Payment">
+    <children>
+      <ImageView fitHeight="189.0" fitWidth="175.0" layoutX="189.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/QR.png" />
+         </image>
+      </ImageView>
+        <Pane prefHeight="164.0" prefWidth="550.0" style="-fx-background-color: #ffb67e;">
+            <children>
+                <Text fill="WHITE" layoutX="116.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment" textAlignment="CENTER" wrappingWidth="317.0041809082031">
+                    <font>
+                        <Font name="MV Boli" size="64.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane layoutY="318.0" prefHeight="306.0" prefWidth="542.0">
+            <children>
+                <TextField fx:id="ReferenceCode" layoutX="227.0" layoutY="151.0" prefHeight="31.0" prefWidth="269.0" />
+                <Text layoutX="80.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Referece code: " wrappingWidth="113.00424194335938" />
+                <Text layoutX="78.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total price :" wrappingWidth="99.6708984375" />
+                <Text layoutX="80.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :" wrappingWidth="99.6708984375" />
+                <Text fx:id="PriceText" fill="RED" layoutX="236.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="91.33755493164062" />
+                <Text layoutX="345.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Baht" wrappingWidth="116.6708984375" />
+                <Text fx:id="NameText" fill="RED" layoutX="238.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="91.33755493164062" />
+              <Text layoutX="80.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address :" />
+              <TextArea fx:id="Address" layoutX="227.0" layoutY="238.0" prefHeight="106.0" prefWidth="269.0" />
+            </children>
+        </Pane>
+        <Button layoutX="295.0" layoutY="697.0" mnemonicParsing="false" onAction="#submitBtnAction" prefHeight="31.0" prefWidth="175.0" style="-fx-background-color: #f56736;" text="COMFIRM" textFill="WHITE" />
+        <Button layoutX="79.0" layoutY="697.0" mnemonicParsing="false" onAction="#handleBackBtnOnAction" prefHeight="31.0" prefWidth="175.0" style="-fx-background-color: #ece5e5;" text="CANCLE" />
+    </children>
+</Pane>

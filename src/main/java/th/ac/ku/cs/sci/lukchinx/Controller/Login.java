@@ -18,7 +18,9 @@ import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.client.RestTemplate;
+import th.ac.ku.cs.sci.lukchinx.List.CustomerList;
 import th.ac.ku.cs.sci.lukchinx.Model.Customer;
+import th.ac.ku.cs.sci.lukchinx.Model.Order;
 import th.ac.ku.cs.sci.lukchinx.Service.CustomerService;
 
 import java.io.IOException;
@@ -57,7 +59,18 @@ public class Login {
                 if(!usernameField.getText().isEmpty() && !passwordField.getText().isEmpty()){
                     Customer customer = customerService.login(new Customer(usernameField.getText(),passwordField.getText()));
                     if(customer != null) {
-                        System.out.println(1);
+                        CustomerList.setCustomer(customer);
+                        Order order = new Order();
+                        order.setCid(CustomerList.getCustomer().getId());
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/templates/menu.fxml"));
+                        Stage stage = (Stage) pane.getScene().getWindow();
+                        try {
+                            stage.setScene(new Scene(loader.load(), 550, 750));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }else{
+                        AlertBox.display("Alert!","Email or Password is not correct!");
                     }
                 }
             }

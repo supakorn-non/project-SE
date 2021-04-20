@@ -29,20 +29,12 @@ import java.io.IOException;
 @FxmlView
 @Controller
 public class Start {
-    private ApplicationContext ac;
     private double opacity = 1;
     @FXML
     Pane pane ;
     @FXML private Circle circle;
     @FXML private ImageView product;
     @FXML private Text text1, text2;
-
-
-//    @Autowired
-//    public void Start(ApplicationContext applicationContext, @Value("classpath:templates/login.fxml")Resource login){
-//        this.ac = applicationContext;
-//        StageCaller caller = new StageCaller(login, ac);
-//    }
 
 
     public void initialize(){

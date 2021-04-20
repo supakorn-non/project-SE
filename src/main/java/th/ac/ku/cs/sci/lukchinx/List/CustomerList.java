@@ -9,7 +9,6 @@ public class CustomerList {
         return customer;
     }
 
-    public static void setCustomer(Customer customer) {CustomerList.customer = customer;
-    }
+    public static void setCustomer(Customer customer) {CustomerList.customer = customer; }
 
 }
